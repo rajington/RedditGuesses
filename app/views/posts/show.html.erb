@@ -1,0 +1,13 @@
+<table>
+	<tr>
+		<th>User</th>
+		<th>Guess</th>
+	</tr>
+	<% @post.submissions.find(:all, :order => :guess).each do |submission| %>
+	<tr>
+		<td><%= submission.author %></td>
+		<td><%= "%g" % submission.guess %></td>
+	</tr>
+	<% end %>
+</table>
+Source: <%= link_to @post.name, @post.url %>
